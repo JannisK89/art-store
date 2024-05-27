@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import Navbar from './ui/navbar'
 import { Eczar } from 'next/font/google'
 import { Taviraj } from 'next/font/google'
 
@@ -28,10 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={eczar.variable + ' ' + taviraj.variable + 'bg-gray-100 '}
-      >
-        <Navbar difficulty="Medium" />
+      <body className={eczar.variable + ' ' + taviraj.variable}>
         {children}
       </body>
     </html>

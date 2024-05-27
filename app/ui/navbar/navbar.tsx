@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import NavbarIcon from './navbar-icon'
 
@@ -19,7 +17,7 @@ export default function Navbar({ difficulty }: AppProps) {
     { text: 'About', url: '/' },
   ]
   return (
-    <header className="w-full bg-gray-900 text-gray-50 py-2  shadow">
+    <header className="w-full text-gray-50 py-2  shadow">
       <div className="container px-4 md:px-8 flex items-center justify-between h-16">
         <Link className="flex items-center gap-2" href="#">
           <NavbarIcon />
