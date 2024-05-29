@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={eczar.variable + ' ' + taviraj.variable}>
+      <body
+        className={eczar.variable + ' ' + taviraj.variable + ' antialiased'}
+      >
         {children}
       </body>
     </html>
