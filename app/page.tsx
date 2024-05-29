@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Navbar from './ui/navbar/navbar'
 import PreviewImage from './ui/preview-image'
 
-const art = [
+const art: { src: string; alt: string; selected: boolean }[] = [
   {
     src: '/art/astro-surf.jpg',
     alt: 'Image of a man surfing in space.',
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       <Navbar difficulty="Easy" />
-      <main className="flex min-h-screen flex-col items-center justify-between p-12">
+      <main className="flex min-h-screen flex-col items-center p-12">
         <div className="md:flex gap-24 items-center mb-12">
           <div className="md:flex flex-col gap-4">
             <h2 className="text-3xl md:text-6xl font-bold">
