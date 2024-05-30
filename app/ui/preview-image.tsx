@@ -5,15 +5,17 @@ type Props = {
   src: string
   alt: string
   selected: boolean
+  onClick: (src: number) => void
 }
 
-export default function PreviewImage({ src, alt, selected }: Props) {
+export default function PreviewImage({ src, alt, selected, onClick }: Props) {
   return (
     <Image
       src={src}
       alt={alt}
       height={150}
       width={150}
+      onClick={() => onClick(parseInt(src))}
       className={clsx(
         'rounded-full shadow',
         !selected &&
