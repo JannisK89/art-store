@@ -61,7 +61,8 @@ export default function PreviewSelect() {
           </h2>
           <p className="md:max-w-96 md:text-xl mb-4 md:mb-0">
             Explore our curated collection of original paintings, drawings, and
-            sculptures from talented AI around the world.
+            sculptures from talented AI around the world using state of the art
+            browser automation technologies.
           </p>
         </div>
         {art

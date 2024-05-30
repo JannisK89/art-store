@@ -5,19 +5,16 @@ import NavbarIcon from './navbar-icon'
 import MenuIcon from './menu-icon'
 import { useState } from 'react'
 import clsx from 'clsx'
+import { ImGithub, ImLinkedin } from 'react-icons/im'
 
 type Link = {
   text: string
   url: string
 }
 
-type AppProps = {
-  difficulty: 'Easy' | 'Medium' | 'Hard'
-}
-
 const links: Link[] = [
   { text: 'Home', url: '/' },
-  { text: 'Challenges', url: '/' },
+  { text: 'Store', url: '/' },
   { text: 'About', url: '/' },
 ]
 
@@ -35,7 +32,7 @@ const printNav = () => {
   )
 }
 
-export default function Navbar({ difficulty }: AppProps) {
+export default function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false)
 
   const expandMenu = () => {
@@ -50,9 +47,16 @@ export default function Navbar({ difficulty }: AppProps) {
           <span className="font-medium  text-2xl ">Art Store</span>
         </Link>
         <div className="hidden md:block">{printNav()}</div>
-        <div className="hidden md:block">
-          Difficulty:{' '}
-          <span className="text-yellow-500 ml-1"> {difficulty}</span>
+        <div className="hidden md:flex gap-3 mr-4">
+          <Link href="https://github.com/JannisK89" target="_blank">
+            <ImGithub />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/jannis-karanikis-58248a179"
+            target="_blank"
+          >
+            <ImLinkedin />
+          </Link>
         </div>
 
         {/* Hamburger Menu */}
