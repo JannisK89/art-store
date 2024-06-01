@@ -54,7 +54,7 @@ export default function PreviewSelect() {
 
   return (
     <>
-      <div className="md:flex gap-24 items-center mb-14">
+      <div className="md:flex gap-24 items-center mb-6 md:mb-14">
         <div className="md:flex flex-col gap-4">
           <h2 className="text-3xl md:text-6xl font-bold">
             Discover Unique Art
@@ -80,7 +80,7 @@ export default function PreviewSelect() {
             )
           })}
       </div>
-      <div className="flex flex-wrap gap-4 md:gap-10 items-center align-center">
+      <div className="flex flex-wrap justify-around gap-3 md:gap-10 items-center align-center mt-1">
         {art.map((image) => {
           return (
             <PreviewImage

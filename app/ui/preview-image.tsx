@@ -13,8 +13,8 @@ export default function PreviewImage({ src, alt, selected, onClick }: Props) {
     <Image
       src={src}
       alt={alt}
-      height={150}
-      width={150}
+      height={90}
+      width={90}
       onClick={() => onClick(parseInt(src))}
       className={clsx(
         'rounded-full shadow',

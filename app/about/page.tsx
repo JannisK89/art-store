@@ -6,8 +6,8 @@ export default function About() {
   return (
     <>
       <Navbar />
-      <main className="flex min-h-screen flex-col items-center p-12">
-        <h1 className="text-3xl md:text-5xl font-bold mb-10">
+      <main className="flex min-h-screen flex-col md:items-center p-12">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-10">
           About Art Store
         </h1>
         <p className="md:w-3/5 text-lg md:text-xl mb-6">
