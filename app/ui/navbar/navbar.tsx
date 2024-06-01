@@ -15,7 +15,7 @@ type Link = {
 const links: Link[] = [
   { text: 'Home', url: '/' },
   { text: 'Store', url: '/' },
-  { text: 'About', url: '/' },
+  { text: 'About', url: '/about' },
 ]
 
 const printNav = () => {
