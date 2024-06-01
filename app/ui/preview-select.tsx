@@ -16,8 +16,8 @@ const initArt = [
     selected: false,
   },
   {
-    src: '/art/lantern.jpg',
-    alt: 'Image of a couple at a lantern festival.',
+    src: '/art/solar-system.jpg',
+    alt: 'Image of a abstract solar system.',
     selected: false,
   },
   {
