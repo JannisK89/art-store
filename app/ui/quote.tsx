@@ -24,7 +24,7 @@ export default function Quote() {
   }, [])
 
   return (
-    <p className="w-4/5 text-lg italic text-center mb-12">
+    <p className="w-4/5 md:text-lg italic text-center mb-12">
       {quote.text}
       <span className="font-bold not-italic"> - {quote.author}</span>
     </p>

@@ -10,7 +10,7 @@ export default function Home() {
         <PreviewSelect />
 
         <hr className="w-2/5 border-2 border-black mt-24 mb-16" />
-        <h2 className="text-3xl md:text-5xl font-bold mb-10">
+        <h2 className="text-2xl md:text-5xl font-bold mb-10">
           The Art Of Automation
         </h2>
         {<Quote />}

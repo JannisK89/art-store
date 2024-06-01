@@ -80,7 +80,7 @@ export default function PreviewSelect() {
             )
           })}
       </div>
-      <div className="flex flex-wrap gap-10 items-center align-center">
+      <div className="flex flex-wrap gap-4 md:gap-10 items-center align-center">
         {art.map((image) => {
           return (
             <PreviewImage

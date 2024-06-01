@@ -20,7 +20,7 @@ export default function PreviewImage({ src, alt, selected, onClick }: Props) {
         'rounded-full shadow',
         !selected &&
           'transition ease-in-out delay-75 hover:translate-y-6 hover:scale-125 duration-300',
-        selected && 'translate-y-6 scale-125 opacity-75'
+        selected && 'md:translate-y-6 md:scale-125 opacity-75'
       )}
     />
   )
