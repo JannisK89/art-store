@@ -10,18 +10,19 @@ type Props = {
 
 export default function PreviewImage({ src, alt, selected, onClick }: Props) {
   return (
-    <Image
-      src={src}
-      alt={alt}
-      height={90}
-      width={90}
-      onClick={() => onClick(parseInt(src))}
-      className={clsx(
-        'rounded-full shadow',
-        !selected &&
-          'transition ease-in-out delay-75 hover:translate-y-6 hover:scale-125 duration-300',
-        selected && 'md:translate-y-6 md:scale-125 opacity-75'
-      )}
-    />
+    <button onClick={() => onClick(parseInt(src))}>
+      <Image
+        src={src}
+        alt={alt}
+        height={90}
+        width={90}
+        className={clsx(
+          'rounded-full shadow',
+          !selected &&
+            'transition ease-in-out delay-75 hover:translate-y-6 hover:scale-125 duration-300',
+          selected && 'md:translate-y-6 md:scale-125 opacity-75'
+        )}
+      />
+    </button>
   )
 }
