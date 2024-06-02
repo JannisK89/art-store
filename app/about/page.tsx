@@ -1,11 +1,9 @@
 import Link from 'next/link'
-import Navbar from '../ui/navbar/navbar'
 import { ImGithub } from 'react-icons/im'
 
 export default function About() {
   return (
     <>
-      <Navbar />
       <main className="flex min-h-screen flex-col md:items-center p-12">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 md:mb-10">
           About Art Store

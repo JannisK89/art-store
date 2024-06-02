@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Eczar } from 'next/font/google'
 import { Taviraj } from 'next/font/google'
+import Navbar from './ui/navbar/navbar'
 
 const eczar = Eczar({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={eczar.variable + ' ' + taviraj.variable + ' antialiased'}
       >
+        <Navbar />
         {children}
       </body>
     </html>
