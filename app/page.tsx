@@ -1,4 +1,3 @@
-import Navbar from './ui/navbar/navbar'
 import PreviewSelect from './ui/preview-select'
 import Quote from './ui/quote'
 

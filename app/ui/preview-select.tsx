@@ -1,45 +1,12 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
 import PreviewImage from './preview-image'
-
-const initArt = [
-  {
-    src: '/art/astro-surf.jpg',
-    alt: 'Image of a man surfing in space.',
-    selected: true,
-  },
-  {
-    src: '/art/frog.jpg',
-    alt: 'Image of a frog smoking a cigar.',
-    selected: false,
-  },
-  {
-    src: '/art/solar-system.jpg',
-    alt: 'Image of a abstract solar system.',
-    selected: false,
-  },
-  {
-    src: '/art/dragon.jpg',
-    alt: 'Image of a sculpture of a dragon eating the world',
-    selected: false,
-  },
-  {
-    src: '/art/night-sky.jpg',
-    alt: 'Image of a starry night.',
-    selected: false,
-  },
-  {
-    src: '/art/detectives.jpg',
-    alt: 'Image of a dog and cat detective duo',
-    selected: false,
-  },
-]
+import { useArtStore } from '../store/useStore'
 
 export default function PreviewSelect() {
-  const [art, setArt] =
-    useState<{ src: string; alt: string; selected: boolean }[]>(initArt)
+  const art = useArtStore((state) => state.art)
+  const setArt = useArtStore((state) => state.setArt)
 
   const handleSelect = (src: number) => {
     const newArt = art.map((image, i) => {

@@ -14,7 +14,7 @@ type Link = {
 
 const links: Link[] = [
   { text: 'Home', url: '/' },
-  { text: 'Store', url: '/store' },
+  { text: 'Shop', url: '/shop' },
   { text: 'About', url: '/about' },
 ]
 
