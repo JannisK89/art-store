@@ -1,43 +1,70 @@
 'use client'
 
 import Image from 'next/image'
-import { useArtStore } from '../../../store/useStore'
+import { useArtStore, useCartStore } from '../../../store/useStore'
 import { ImArrowLeft2, ImArrowRight2 } from 'react-icons/im'
+import { useState } from 'react'
+import clsx from 'clsx'
 
 export default function Product({ params }: { params: { slug: string } }) {
-  const art = useArtStore((state) => state.art)
-  const selectedArt = art[parseInt(params.slug) - 1]
+  const [purchased, setPurchased] = useState(false)
+  const [amount, setAmount] = useState(1)
+  const art = useArtStore((state) => state.art[parseInt(params.slug) - 1])
+  const cart = useCartStore((state) => state.cart)
+
+  const purchaseClickHandler = () => {
+    const item = { ...art, amount }
+
+    // TODO: Add to state local storage instead?
+    const index = cart.findIndex((cartItem) => cartItem.id === item.id)
+    index >= 0 ? (cart[index].amount += item.amount) : cart.push(item)
+    setPurchased(true)
+    setTimeout(() => {
+      setPurchased(false)
+    }, 4000)
+    console.log(cart)
+  }
+
   return (
     <main className="flex min-h-screen flex-col items-center p-12">
-      {selectedArt ? (
+      {art ? (
         <div className="flex shadow rounded-lg bg-white p-12 gap-4 ">
           <div className="flex flex-col gap-4 text-gray-800">
-            <span className="text-5xl  font-medium ">{selectedArt.title}</span>
-            <span className="text-2xl font-medium ">
-              By: {selectedArt.artist}
-            </span>
+            <span className="text-5xl  font-medium ">{art.title}</span>
+            <span className="text-2xl font-medium ">By: {art.artist}</span>
             <div className="flex flex-col items-center gap-3">
               <Image
-                src={selectedArt.src}
-                alt={selectedArt.alt}
+                src={art.src}
+                alt={art.alt}
                 height={400}
                 width={400}
                 className="rounded-xl shadow"
               />
-              <span className="text-2xl font-thin self-end">
-                ${selectedArt.price}
-              </span>
+              <span className="text-2xl font-thin self-end">${art.price}</span>
               <div className="flex">
-                <button className="rounded-lg shadow bg-slate-100 p-3">
+                <button
+                  className="rounded-lg shadow bg-slate-100 hover:bg-slate-200 p-3"
+                  onClick={() => setAmount(amount > 1 ? amount - 1 : amount)}
+                >
                   <ImArrowLeft2 />
                 </button>
-                <span className="font-thin shadow py-3 px-12">1</span>
-                <button className="rounded-lg shadow bg-slate-100 p-3">
+                <span className="font-thin shadow py-3 px-12">{amount}</span>
+                <button
+                  className="rounded-lg shadow bg-slate-100 hover:bg-slate-200 p-3"
+                  onClick={() => setAmount(amount + 1)}
+                >
                   <ImArrowRight2 />
                 </button>
               </div>
-              <button className="text-xl shadow rounded-lg py-4 px-24 font-thin bg-sky-500">
-                Add to cart
+              <button
+                disabled={purchased}
+                onClick={purchaseClickHandler}
+                className={clsx(
+                  'text-xl shadow  rounded-lg py-4 px-24 font-thin ease-in-out duration-1000 transition',
+                  purchased ? 'bg-green-500' : 'bg-sky-500 hover:bg-sky-600'
+                )}
+              >
+                {purchased ? 'Product added' : 'Add to cart '}
               </button>
             </div>
           </div>

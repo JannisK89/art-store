@@ -1,19 +1,36 @@
 import { create } from 'zustand'
 import { Art } from '../types/art'
 
-type artStore = {
+type ArtStore = {
   art: Art[]
   setArt: (art: Art[]) => void
 }
 
-export const useArtStore = create<artStore>((set) => ({
+type selectedArtFields = Pick<
+  Art,
+  'id' | 'src' | 'alt' | 'price' | 'title' | 'artist'
+>
+
+type CartItem = selectedArtFields & { amount: number }
+
+type CartStore = {
+  cart: CartItem[]
+  setCart: (art: CartItem[]) => void
+}
+
+export const useCartStore = create<CartStore>((set) => ({
+  cart: [],
+  setCart: (cart) => set({ cart }),
+}))
+
+export const useArtStore = create<ArtStore>((set) => ({
   art: [
     {
       id: 1,
       src: '/art/astro-surf.jpg',
       alt: 'Image of a man surfing in space.',
       selected: true,
-      price: 100,
+      price: 500,
       title: 'Astro Surfer',
       artist: 'Katsushika Hokusai-Net',
     },
@@ -22,7 +39,7 @@ export const useArtStore = create<artStore>((set) => ({
       src: '/art/frog.jpg',
       alt: 'Image of a frog smoking a cigar.',
       selected: false,
-      price: 200,
+      price: 1337,
       title: 'Frog with Cigar',
       artist: 'Pablo Picassobot',
     },
@@ -31,17 +48,17 @@ export const useArtStore = create<artStore>((set) => ({
       src: '/art/solar-system.jpg',
       alt: 'Image of a abstract solar system.',
       selected: false,
-      price: 300,
+      price: 1000,
       title: 'Solar System',
       artist: 'Claude Monet-ization',
     },
     {
       id: 4,
-      src: '/art/dragon.jpg',
-      alt: 'Image of a sculpture of a dragon eating the world',
+      src: '/art/nightmare.jpg',
+      alt: 'Image of a cosmic horror',
       selected: false,
-      price: 400,
-      title: 'World Eater',
+      price: 4000,
+      title: 'The Nightmare Beyond',
       artist: 'Leonardo Da Vinci-Code',
     },
     {
