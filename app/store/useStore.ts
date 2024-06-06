@@ -1,17 +1,9 @@
 import { create } from 'zustand'
-
-type art = {
-  src: string
-  alt: string
-  selected: boolean
-  price: number
-  title: string
-  artist: string
-}
+import { Art } from '../types/art'
 
 type artStore = {
-  art: art[]
-  setArt: (art: art[]) => void
+  art: Art[]
+  setArt: (art: Art[]) => void
 }
 
 export const useArtStore = create<artStore>((set) => ({
@@ -63,6 +55,54 @@ export const useArtStore = create<artStore>((set) => ({
       price: 600,
       title: 'Detectives in the Night',
       artist: 'Salvador DALL-E',
+    },
+    {
+      src: '/art/dream.jpg',
+      alt: 'Image of woman in a dream like landscape',
+      selected: false,
+      price: 12000,
+      title: 'Morning Dream',
+      artist: 'Frida Kahlo-bot',
+    },
+    {
+      src: '/art/philosopher.jpg',
+      alt: 'Image of a philosopher studing a book',
+      selected: false,
+      price: 20000,
+      title: 'Knowledge Seeker',
+      artist: 'Michelangelo A.I.',
+    },
+    {
+      src: '/art/robot.jpg',
+      alt: 'Image of a robot singing karaoke',
+      selected: false,
+      price: 9999,
+      title: 'Song Of Resonance',
+      artist: 'Android 18',
+    },
+    {
+      src: '/art/forgotten.jpg',
+      alt: 'Image of a woman in branches',
+      selected: false,
+      price: 2200,
+      title: 'Forgotten Memories',
+      artist: 'Unknown',
+    },
+    {
+      src: '/art/reality.jpg',
+      alt: 'Image of a starnge sculpture',
+      selected: false,
+      price: 8600,
+      title: 'Reality Check',
+      artist: 'Lady Ada Lovelace',
+    },
+    {
+      src: '/art/wizard.jpg',
+      alt: 'Image of a wizard casting a spell',
+      selected: false,
+      price: 34662,
+      title: 'Wizard of the North',
+      artist: '34th Century Mage',
     },
   ],
   setArt: (art) => set({ art }),

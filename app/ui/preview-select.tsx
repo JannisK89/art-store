@@ -33,6 +33,7 @@ export default function PreviewSelect() {
           </p>
         </div>
         {art
+          .slice(0, 6)
           .filter((image) => image.selected)
           .map((image) => {
             return (
@@ -48,7 +49,7 @@ export default function PreviewSelect() {
           })}
       </div>
       <div className="flex flex-wrap justify-around gap-3 md:gap-10 items-center align-center mt-1">
-        {art.map((image) => {
+        {art.slice(0, 6).map((image) => {
           return (
             <PreviewImage
               key={image.src}
