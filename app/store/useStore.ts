@@ -9,6 +9,7 @@ type artStore = {
 export const useArtStore = create<artStore>((set) => ({
   art: [
     {
+      id: 1,
       src: '/art/astro-surf.jpg',
       alt: 'Image of a man surfing in space.',
       selected: true,
@@ -17,6 +18,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Katsushika Hokusai-Net',
     },
     {
+      id: 2,
       src: '/art/frog.jpg',
       alt: 'Image of a frog smoking a cigar.',
       selected: false,
@@ -25,6 +27,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Pablo Picassobot',
     },
     {
+      id: 3,
       src: '/art/solar-system.jpg',
       alt: 'Image of a abstract solar system.',
       selected: false,
@@ -33,6 +36,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Claude Monet-ization',
     },
     {
+      id: 4,
       src: '/art/dragon.jpg',
       alt: 'Image of a sculpture of a dragon eating the world',
       selected: false,
@@ -41,6 +45,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Leonardo Da Vinci-Code',
     },
     {
+      id: 5,
       src: '/art/night-sky.jpg',
       alt: 'Image of a starry night.',
       selected: false,
@@ -49,6 +54,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Vincent van Bot',
     },
     {
+      id: 6,
       src: '/art/detectives.jpg',
       alt: 'Image of a dog and cat detective duo',
       selected: false,
@@ -57,6 +63,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Salvador DALL-E',
     },
     {
+      id: 7,
       src: '/art/dream.jpg',
       alt: 'Image of woman in a dream like landscape',
       selected: false,
@@ -65,6 +72,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Frida Kahlo-bot',
     },
     {
+      id: 8,
       src: '/art/philosopher.jpg',
       alt: 'Image of a philosopher studing a book',
       selected: false,
@@ -73,6 +81,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Michelangelo A.I.',
     },
     {
+      id: 9,
       src: '/art/robot.jpg',
       alt: 'Image of a robot singing karaoke',
       selected: false,
@@ -81,6 +90,7 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Android 18',
     },
     {
+      id: 10,
       src: '/art/forgotten.jpg',
       alt: 'Image of a woman in branches',
       selected: false,
@@ -89,14 +99,16 @@ export const useArtStore = create<artStore>((set) => ({
       artist: 'Unknown',
     },
     {
+      id: 11,
       src: '/art/reality.jpg',
-      alt: 'Image of a starnge sculpture',
+      alt: 'Image of a strange sculpture',
       selected: false,
       price: 8600,
       title: 'Reality Check',
       artist: 'Lady Ada Lovelace',
     },
     {
+      id: 12,
       src: '/art/wizard.jpg',
       alt: 'Image of a wizard casting a spell',
       selected: false,

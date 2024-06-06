@@ -1,9 +1,20 @@
 import { Art } from '@/app/types/art'
 import Image from 'next/image'
+import Link from 'next/link'
 
-export default function ProductCard({ src, alt, title, artist, price }: Art) {
+export default function ProductCard({
+  id,
+  src,
+  alt,
+  title,
+  artist,
+  price,
+}: Art) {
   return (
-    <div className="flex items-center shadow p-4 gap-4 hover:shadow-lg hover:scale-110 transition ease-in-out duration-300">
+    <Link
+      href={`/shop/product/${id}`}
+      className="flex items-center shadow p-4 gap-4 bg-white hover:shadow-lg hover:scale-110 transition ease-in-out duration-300"
+    >
       <div className="flex flex-col">
         <Image
           src={src}
@@ -20,6 +31,6 @@ export default function ProductCard({ src, alt, title, artist, price }: Art) {
         </span>
         <span className="text-xs font-thin self-end">${price}</span>
       </div>
-    </div>
+    </Link>
   )
 }

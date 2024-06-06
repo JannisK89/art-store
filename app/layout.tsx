@@ -29,7 +29,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={eczar.variable + ' ' + taviraj.variable + ' antialiased'}
+        className={
+          eczar.variable + ' ' + taviraj.variable + ' antialiased bg-slate-50'
+        }
       >
         <Navbar />
         {children}
