@@ -11,18 +11,26 @@ export default function Product({ params }: { params: { slug: string } }) {
   const [amount, setAmount] = useState(1)
   const art = useArtStore((state) => state.art[parseInt(params.slug) - 1])
   const cart = useCartStore((state) => state.cart)
+  const setCart = useCartStore((state) => state.setCart)
 
   const purchaseClickHandler = () => {
-    const item = { ...art, amount }
-
-    // TODO: Add to state local storage instead?
-    const index = cart.findIndex((cartItem) => cartItem.id === item.id)
-    index >= 0 ? (cart[index].amount += item.amount) : cart.push(item)
+    const newItem = { ...art, amount }
+    const index = cart.findIndex((cartItem) => cartItem.id === newItem.id)
+    if (index < 0) {
+      setCart([...cart, newItem])
+    } else {
+      setCart(
+        cart.map((cartItem) =>
+          cartItem.id === newItem.id
+            ? { ...cartItem, amount: cartItem.amount + newItem.amount }
+            : cartItem
+        )
+      )
+    }
     setPurchased(true)
     setTimeout(() => {
       setPurchased(false)
     }, 4000)
-    console.log(cart)
   }
 
   return (

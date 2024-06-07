@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { Art } from '../types/art'
+import { devtools, persist } from 'zustand/middleware'
 
 type ArtStore = {
   art: Art[]
@@ -18,10 +19,19 @@ type CartStore = {
   setCart: (art: CartItem[]) => void
 }
 
-export const useCartStore = create<CartStore>((set) => ({
-  cart: [],
-  setCart: (cart) => set({ cart }),
-}))
+export const useCartStore = create<CartStore>()(
+  devtools(
+    persist(
+      (set) => ({
+        cart: [],
+        setCart: (cart: CartItem[]) => set({ cart }),
+      }),
+      {
+        name: 'cart-store',
+      }
+    )
+  )
+)
 
 export const useArtStore = create<ArtStore>((set) => ({
   art: [
