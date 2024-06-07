@@ -6,6 +6,7 @@ import MenuIcon from './menu-icon'
 import { useState } from 'react'
 import clsx from 'clsx'
 import { ImGithub, ImLinkedin } from 'react-icons/im'
+import CartButton from '../cartButton'
 
 type Link = {
   text: string
@@ -47,15 +48,16 @@ export default function Navbar() {
           <span className="font-medium  text-2xl">Art Store</span>
         </Link>
         <div className="hidden md:block">{printNav()}</div>
-        <div className="hidden md:flex gap-5 ml-8 mr-4 ">
+        <div className="hidden md:flex gap-5 mr-4 ">
+          <CartButton />
           <Link href="https://github.com/JannisK89" target="_blank">
-            <ImGithub className="text-2xl" />
+            <ImGithub className="text-2xl transition hover:scale-125 ease-in-out" />
           </Link>
           <Link
             href="https://www.linkedin.com/in/jannis-karanikis-58248a179"
             target="_blank"
           >
-            <ImLinkedin className="text-2xl" />
+            <ImLinkedin className="text-2xl transition hover:scale-125 ease-in-out" />
           </Link>
         </div>
 
