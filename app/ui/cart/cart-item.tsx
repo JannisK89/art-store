@@ -41,7 +41,7 @@ export default function CartItem({
           </span>
         </div>
       </div>
-      <button className="rounded-lg text-red-500 shadow bg-slate-50 hover:bg-red-500 hover:text-slate-50 p-4 transition-colors ease-in-out duration-300">
+      <button className="rounded-md text-red-500 shadow bg-slate-50 hover:bg-red-500 hover:text-slate-50 p-4 transition-colors ease-in-out duration-300">
         <IoIosTrash />
       </button>
     </li>
