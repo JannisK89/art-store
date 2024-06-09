@@ -43,6 +43,7 @@ export default function PreviewSelect() {
                 alt={image.alt}
                 height={500}
                 width={500}
+                priority={true}
                 className="rounded-xl shadow"
               />
             )

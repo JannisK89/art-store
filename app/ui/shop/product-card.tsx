@@ -1,3 +1,4 @@
+import { commaSeparator } from '@/app/lib/comma-separator'
 import { Art } from '@/app/types/art'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -29,7 +30,9 @@ export default function ProductCard({
         <span className="text-xs text-gray-600 font-medium self-center ">
           {artist}
         </span>
-        <span className="text-xs font-thin self-end">${price}</span>
+        <span className="text-xs font-thin self-end">
+          ${commaSeparator(price)}
+        </span>
       </div>
     </Link>
   )
