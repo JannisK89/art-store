@@ -1,18 +1,11 @@
 import { create } from 'zustand'
-import { Art } from '../types/art'
+import { Art, CartItem } from '../types/art'
 import { devtools, persist } from 'zustand/middleware'
 
 type ArtStore = {
   art: Art[]
   setArt: (art: Art[]) => void
 }
-
-type selectedArtFields = Pick<
-  Art,
-  'id' | 'src' | 'alt' | 'price' | 'title' | 'artist'
->
-
-type CartItem = selectedArtFields & { amount: number }
 
 type CartStore = {
   cart: CartItem[]
