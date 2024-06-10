@@ -32,7 +32,7 @@ export default function About() {
           capabilities with Art Store.
         </p>
         <Link href={'https://github.com/JannisK89/art-store'} target="_blank">
-          <ImGithub className="text-5xl hover:text-blue-400" />
+          <ImGithub className="text-5xl hover:text-blue-500" />
         </Link>
       </main>
     </>

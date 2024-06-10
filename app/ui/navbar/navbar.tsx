@@ -7,6 +7,7 @@ import { useState } from 'react'
 import clsx from 'clsx'
 import { ImGithub, ImLinkedin } from 'react-icons/im'
 import CartButton from '../cartButton'
+import Image from 'next/image'
 
 type Link = {
   text: string
@@ -50,7 +51,12 @@ export default function Navbar() {
           className="flex items-center gap-2 hover:scale-125 hover:text-sky-500 transition ease-in-out"
           href="/"
         >
-          <NavbarIcon />
+          <Image
+            src="/art/ml.png"
+            alt="Art Store Logo"
+            width={50}
+            height={50}
+          />
           <span className="font-medium  text-2xl">Art Store</span>
         </Link>
         <div className="hidden md:block">{printNav()}</div>
