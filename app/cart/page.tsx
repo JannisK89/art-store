@@ -1,8 +1,22 @@
 'use client'
 
+import Link from 'next/link'
 import { commaSeparator } from '../lib/comma-separator'
 import { useCartStore } from '../store/useStore'
 import CartItem from '../ui/cart/cart-item'
+
+const showPaymentBtn = (total: number) => {
+  if (total > 0) {
+    return (
+      <Link
+        href={'/checkout'}
+        className="bg-sky-500 hover:bg-sky-600 p-4 text-lg mt-2 rounded-lg shadow"
+      >
+        Proceed to Payment
+      </Link>
+    )
+  }
+}
 
 export default function Cart() {
   let total = 0
@@ -20,6 +34,7 @@ export default function Cart() {
         <span className="font-semibold">Total: </span>
         <span> ${commaSeparator(total)}</span>
       </div>
+      {showPaymentBtn(total)}
     </main>
   )
 }
