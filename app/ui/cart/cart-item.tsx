@@ -24,11 +24,13 @@ export default function CartItem({
     <li className="flex justify-between gap-4 ">
       <div className="flex gap-4">
         <Image
-          className="rounded shadow border-black "
+          className="self-center rounded shadow border-black "
           src={src}
           alt={alt}
-          height={105}
-          width={105}
+          height={115}
+          width={115}
+          placeholder="blur"
+          blurDataURL={src}
         />
         <div className="flex flex-col content-start">
           <span className="font-bold"> {title} </span>

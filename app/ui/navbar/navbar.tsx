@@ -24,7 +24,10 @@ const printNav = () => {
     <nav>
       <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-10 mr-8 font-medium md:font-medium text-xl md:text-base">
         {links.map((link) => (
-          <li className=" hover:underline hover:text-gray-500" key={link.text}>
+          <li
+            className="hover:scale-125 transition ease-in-out hover:text-sky-500"
+            key={link.text}
+          >
             <Link href={link.url}> {link.text} </Link>
           </li>
         ))}
@@ -43,21 +46,29 @@ export default function Navbar() {
   return (
     <header className="w-full py-2 border-black shadow ">
       <div className="container px-8 flex items-center justify-between h-16">
-        <Link className="flex items-center gap-2" href="/">
+        <Link
+          className="flex items-center gap-2 hover:scale-125 hover:text-sky-500 transition ease-in-out"
+          href="/"
+        >
           <NavbarIcon />
           <span className="font-medium  text-2xl">Art Store</span>
         </Link>
         <div className="hidden md:block">{printNav()}</div>
-        <div className="hidden md:flex gap-5 mr-4 ">
+        <div className="md:flex gap-5 mr-4 ">
           <CartButton />
-          <Link href="https://github.com/JannisK89" target="_blank">
-            <ImGithub className="text-2xl transition hover:scale-125 ease-in-out" />
+          <Link
+            className="hidden md:block"
+            href="https://github.com/JannisK89"
+            target="_blank"
+          >
+            <ImGithub className="text-2xl transition hover:text-sky-500 hover:scale-125 ease-in-out" />
           </Link>
           <Link
+            className="hidden md:block"
             href="https://www.linkedin.com/in/jannis-karanikis-58248a179"
             target="_blank"
           >
-            <ImLinkedin className="text-2xl transition hover:scale-125 ease-in-out" />
+            <ImLinkedin className="text-2xl transition hover:text-sky-500 hover:scale-125 ease-in-out" />
           </Link>
         </div>
 

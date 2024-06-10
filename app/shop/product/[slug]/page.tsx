@@ -68,11 +68,11 @@ export default function Product({ params }: { params: { slug: string } }) {
                 disabled={purchased}
                 onClick={purchaseClickHandler}
                 className={clsx(
-                  'text-xl shadow  rounded-lg py-4 px-24 font-thin ease-in-out duration-1000 transition',
+                  'text-xl shadow  rounded-lg py-4 px-12 md:px-24 font-thin ease-in-out duration-1000 transition',
                   purchased ? 'bg-green-500' : 'bg-sky-500 hover:bg-sky-600'
                 )}
               >
-                {purchased ? 'Product added' : 'Add to cart '}
+                {purchased ? 'Product added' : 'Add to cart'}
               </button>
             </div>
           </div>

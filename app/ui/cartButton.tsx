@@ -10,7 +10,7 @@ export default function CartButton() {
   return (
     <Link
       href={'/cart'}
-      className="text-2xl flex align-middle transition hover:scale-125 ease-in-out"
+      className="fixed bg-slate-200 rounded-3xl p-3 right-6 bottom-6 text-2xl md:text-6xl flex align-middle transition md:hover:bg-sky-500 md:hover:scale-125 ease-in-out"
     >
       <IoIosCart
         className={clsx(
@@ -18,7 +18,7 @@ export default function CartButton() {
           'transition-colors ease-in-out duration-1000'
         )}
       />
-      <span className="font-thin text-xs self-end">{cart.length}</span>
+      <span className="font-thin text-base self-end">{cart.length}</span>
     </Link>
   )
 }

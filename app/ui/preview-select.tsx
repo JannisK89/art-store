@@ -45,6 +45,8 @@ export default function PreviewSelect() {
                 width={500}
                 priority={true}
                 className="rounded-xl shadow"
+                blurDataURL={image.src}
+                placeholder="blur"
               />
             )
           })}
