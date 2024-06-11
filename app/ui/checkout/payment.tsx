@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Input from './input'
 
+// TODO: Fix submit button
 export default function Payment() {
   return (
     <div className="flex flex-col mt-6">
@@ -23,6 +24,9 @@ export default function Payment() {
           </Link>
           <input className="mx-1" type="checkbox" />
         </label>
+        <button className="bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg mt-4">
+          Submit
+        </button>
       </form>
     </div>
   )
