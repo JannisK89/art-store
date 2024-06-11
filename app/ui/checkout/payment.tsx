@@ -1,25 +1,29 @@
+import Link from 'next/link'
+import Input from './input'
+
 export default function Payment() {
   return (
     <div className="flex flex-col mt-6">
-      <h2 className="text-2xl">Payment</h2>
-      <div className="flex flex-col md:flex-row md:gap-2 gap-4 border border-slate-200 p-6 rounded-xl shadow">
-        <label className="flex flex-col text-lg font-light mx-1">
-          First Name
-          <input
-            className="shadow text-sm font-thin px-2 py-2 appearance-none"
-            type="text"
-            placeholder="First Name"
-          />
+      <h2 className="text-2xl ml-2 mb-2">Payment</h2>
+      <form className="flex flex-col md:gap-2 gap-4 border border-slate-200 p-6 rounded-xl shadow">
+        <div className="md:flex">
+          <Input label="First Name" placeholder="First Name" />
+          <Input label="Last Name" placeholder="Last Name" />
+        </div>
+        <Input label="Address" placeholder="Address" />
+        <Input label="Email" type="email" placeholder="Email" />
+        <label className="md:flex gap-1 mt-6 text-lg font-light mx-1">
+          I agree to the{' '}
+          <Link
+            href={'/terms-and-conditions'}
+            className="text-sky-500 hover:text-sky-700"
+            target="_blank"
+          >
+            Terms And Conditions
+          </Link>
+          <input className="mx-1" type="checkbox" />
         </label>
-        <label className="flex flex-col text-lg font-light mx-1">
-          Last Name
-          <input
-            className="shadow text-sm font-thin px-2 py-2 mt-1"
-            type="text"
-            placeholder="Last Name"
-          />
-        </label>
-      </div>
+      </form>
     </div>
   )
 }
