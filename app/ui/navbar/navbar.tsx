@@ -1,13 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import NavbarIcon from './navbar-icon'
 import MenuIcon from './menu-icon'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
 import { ImGithub, ImLinkedin } from 'react-icons/im'
 import CartButton from '../cartButton'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 type Link = {
   text: string
@@ -23,7 +23,7 @@ const links: Link[] = [
 const printNav = () => {
   return (
     <nav>
-      <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-10 mr-8 font-medium md:font-medium text-xl md:text-base">
+      <ul className="flex flex-col md:flex-row items-center gap-4 md:gap-10 md:mr-20 font-medium md:font-medium text-xl md:text-base">
         {links.map((link) => (
           <li
             className="hover:scale-125 transition ease-in-out hover:text-sky-500"
@@ -39,6 +39,29 @@ const printNav = () => {
 
 export default function Navbar() {
   const [isExpanded, setIsExpanded] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const pathName = usePathname()
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target as Node) &&
+      isExpanded
+    ) {
+      setIsExpanded(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  })
+
+  useEffect(() => {
+    setIsExpanded(false)
+  }, [pathName])
 
   const expandMenu = () => {
     setIsExpanded(!isExpanded)
@@ -79,7 +102,7 @@ export default function Navbar() {
         </div>
 
         {/* Hamburger Menu */}
-        <div className="md:hidden relative">
+        <div ref={menuRef} className="md:hidden relative">
           <button onClick={expandMenu}>
             <MenuIcon isExpanded={isExpanded} />
           </button>

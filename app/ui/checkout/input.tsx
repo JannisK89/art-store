@@ -16,6 +16,7 @@ export default function Input({
         className="shadow text-sm font-thin px-2 py-2 focus:outline-none focus:ring-2 focus:ring-sky-300 focus:border-transparent"
         type={type}
         placeholder={placeholder}
+        required
       />
     </label>
   )
