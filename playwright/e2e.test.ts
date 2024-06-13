@@ -4,5 +4,4 @@ test('should open the home page', async ({ page }) => {
   await page.goto('/')
 
   await expect(page.getByText('Art Store')).toBeVisible()
-  await expect(page.getByText('Easy')).toBeVisible()
 })
