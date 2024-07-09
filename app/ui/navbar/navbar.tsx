@@ -69,7 +69,7 @@ export default function Navbar() {
 
   return (
     <header className="w-full py-2 border-black shadow ">
-      <div className="container px-8 flex items-center justify-between h-16">
+      <div className="w-full px-8 flex items-center justify-between h-16">
         <Link
           className="flex items-center gap-2 hover:scale-125 hover:text-sky-500 transition ease-in-out"
           href="/"
